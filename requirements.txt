@@ -1,0 +1,12 @@
+pandas
+numpy
+langchain
+langchain-core
+langchain-community
+langchain-groq
+langchain-google-genai
+python-dotenv
+streamlit
+gradio
+faiss-cpu
+tabulate
