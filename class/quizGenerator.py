@@ -7,7 +7,7 @@ load_dotenv()
 llm = ChatGroq(model_name="llama-3.3-70b-versatile")
 
 template = """
-Generate 3 multiple-choice questions on {topic}.
+Generate {number} multiple-choice questions on {topic}.
 Each question should have 4 options and mark the correct one clearly.
 Format:
 Question: <text>
@@ -16,5 +16,9 @@ Answer: <correct option>
 """
 prompt = PromptTemplate.from_template(template)
 chain = prompt | llm
+
 userInput= input("Enter the Topic for Quiz: ")
-print(chain.invoke({"topic":userInput}).content)
+userNumber = int(input("Enter the Number of Questions: "))
+
+
+print(chain.invoke({"number":userNumber,"topic":userInput}).content)
